@@ -3,12 +3,7 @@
     <head>
         <meta charset="utf-8" />
         <title>Canvas Encyclopedia</title>
-        <!-- <script type="text/javascript" src="/dist/app.min.js"></script> -->
-        <script type="text/javascript">
-            document.write(
-                `<script src="/dist/app.min.js?v=${Date.now()}"></` + `script>`
-            )
-        </script>
+        <script type="text/javascript" src="/dist/app.min.js"></script>
 
         <link rel="stylesheet" href="/dist/main.min.css" />
     </head>
@@ -16,8 +11,11 @@
         <ul class="ul-reset canvas-list">
             <li>
                 <h3>Linear Gradient</h3>
-                <p></p>
-                <canvas class="linear-gradient" />
+                <p>
+                    Linear gradients are created in a single global area. The
+                    example below creates one linear gradient per line.
+                </p>
+                <canvas class="linear-gradient" width="500" height="200" />
             </li>
         </ul>
     </body>
