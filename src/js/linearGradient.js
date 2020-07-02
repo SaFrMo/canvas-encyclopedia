@@ -1,4 +1,4 @@
-import { setupCanvas } from './utils'
+import { setupCanvas, update } from './utils'
 
 export default function() {
     const { canvas, ctx } = setupCanvas('.linear-gradient')
@@ -11,5 +11,5 @@ export default function() {
 
     // Set the fill style and draw a rectangle
     ctx.fillStyle = gradient
-    ctx.fillRect(20, 20, 200, 100)
+    ctx.fillRect(20, 20, 250, 100)
 }

@@ -2,10 +2,16 @@
 
 :root {
     --black: black;
+    --faded: rgba(0, 0, 0, 0.1);
+    --shadow: 0 0 20px var(--faded);
 }
 
 .canvas-list {
     li {
-        border: 1px solid var(--black);
+        padding: 0 20px;
+
+        canvas {
+            box-shadow: var(--shadow);
+        }
     }
 }
