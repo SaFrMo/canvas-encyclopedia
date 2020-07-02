@@ -32,7 +32,7 @@ class Trail {
 
         // move trail
         this.pos.x += this.speed.x * (delta / 1000)
-        // reset  at far right
+        // reset at far right
         if (this.pos.x >= 1) {
             //  Y, speed, width, and position
             this.pos.y = Math.random()
@@ -67,10 +67,13 @@ class Trail {
 
 export default function() {
     const { canvas, ctx } = setupCanvas('.linear-gradient')
+
+    // create some trails
     const trails = Array(100)
         .fill(null)
         .map(() => new Trail({ host: canvas }))
 
+    // kick update
     update(() => {
         ctx.fillStyle = 'black'
         ctx.fillRect(0, 0, canvas.width, canvas.height)
