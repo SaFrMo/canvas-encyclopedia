@@ -12,10 +12,7 @@ class Trail {
 
         Object.keys(opts).forEach(opt => (this[opt] = opts[opt]))
 
-        this.lastTick = Date.now()
-
         this.refreshHost(opts.host)
-        this.update()
     }
 
     refreshHost(canvas) {
@@ -23,13 +20,7 @@ class Trail {
         this.ctx = this.canvas ? this.canvas.getContext('2d') : null
     }
 
-    update() {
-        // update deltaTime
-        const lastTick = this.lastTick
-        const tick = Date.now()
-        const delta = tick - this.lastTick
-        this.lastTick = tick
-
+    update(delta) {
         // move trail
         this.pos.x += this.speed.x * (delta / 1000)
         // reset at far right
@@ -74,9 +65,9 @@ export default function() {
         .map(() => new Trail({ host: canvas }))
 
     // kick update
-    update(() => {
+    update(delta => {
         ctx.fillStyle = 'black'
         ctx.fillRect(0, 0, canvas.width, canvas.height)
-        trails.forEach(trail => trail.update())
+        trails.forEach(trail => trail.update(delta))
     })
 }

@@ -4,9 +4,13 @@ export function setupCanvas(className) {
     return { canvas, ctx }
 }
 
+// callback receives deltaTime as argument
+let lastTick = Date.now() - 100
+
 export function update(callback) {
     function runUpdate() {
-        callback()
+        callback(Date.now() - lastTick)
+        lastTick = Date.now()
         requestAnimationFrame(runUpdate)
     }
 
