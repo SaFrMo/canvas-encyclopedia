@@ -16,3 +16,15 @@ export function update(callback) {
 
     runUpdate()
 }
+
+export class Vector2 {
+    constructor(opts = {}) {
+        this.x = opts.x === undefined ? Math.random() : opts.x
+        this.y = opts.y === undefined ? Math.random() : opts.y
+    }
+}
+
+export function circle({ ctx, point, radius }) {
+    ctx.arc(point.x, point.y, radius || 5, 0, 2 * Math.PI)
+    ctx.fill()
+}
