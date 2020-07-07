@@ -48,7 +48,8 @@ class Trail {
         // prep gradient
         const gradient = this.ctx.createLinearGradient(...points)
         gradient.addColorStop(0, 'rgba(0, 0, 0, 0)')
-        gradient.addColorStop(1, 'rgba(180, 180, 180, 1)')
+        const maxOpaque = Math.max(0.1, this.speed.x)
+        gradient.addColorStop(1, `rgba(180, 180, 180, ${maxOpaque})`)
 
         // draw gradient
         this.ctx.fillStyle = gradient
