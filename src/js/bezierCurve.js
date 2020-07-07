@@ -22,18 +22,10 @@ class BezierLine {
         const end = this.end.canvas(this.canvas)
 
         // line
-        this.ctx.fillStyle = 'rgba(0, 0, 0, 0)'
         this.ctx.beginPath()
         this.ctx.moveTo(start.x, start.y)
         this.ctx.bezierCurveTo(cp1.x, cp1.y, cp2.x, cp2.y, end.x, end.y)
         this.ctx.stroke()
-
-        // start
-        // this.ctx.fillStyle = 'black'
-
-        // start and end circles
-        // circle({ ctx: this.ctx, point: start })
-        // circle({ ctx: this.ctx, point: end })
     }
 }
 
