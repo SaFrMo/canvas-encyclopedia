@@ -22,9 +22,14 @@ export class Vector2 {
         this.x = opts.x === undefined ? Math.random() : opts.x
         this.y = opts.y === undefined ? Math.random() : opts.y
     }
+
+    canvas(cv) {
+        return { x: this.x * cv.width, y: this.y * cv.height }
+    }
 }
 
 export function circle({ ctx, point, radius }) {
+    ctx.moveTo(point.x, point.y)
     ctx.arc(point.x, point.y, radius || 5, 0, 2 * Math.PI)
     ctx.fill()
 }
